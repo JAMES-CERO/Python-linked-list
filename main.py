@@ -28,11 +28,33 @@ class LinkedList:
         n_node.reference = self.head
         self.head = n_node
 
-linked_list1 = LinkedList()
+    def add_item(self, data):
+        new_n = Node(data)
+        if self.head is None:
+            self.head = new_n
+        else:
+        
+            last_n = self.head
+
+            while last_n.reference:
+                last_n = last_n.reference
+            last_n.reference = new_n 
 
 
-linked_list1.add_to_start(82)
-linked_list1.add_to_start(55)
+        # Accepts a value. Creates a node with that value, and adds the node to the end of the linked list.
 
-linked_list1.print_linked_list()
+# linked_list1 = LinkedList()
 
+
+# linked_list1.add_to_start(82)
+# linked_list1.add_to_start(55)
+
+# linked_list1.print_linked_list()
+
+mylist = LinkedList()
+
+mylist.add_item(5)
+mylist.add_item(10)
+mylist.add_item(15)
+
+mylist.print_linked_list()
